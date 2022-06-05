@@ -1,14 +1,24 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
+import PersonalDetail from '../views/PersonalDetail.vue'
+
+// Layout Components
+import Header from '../components/layouts/Header.vue'
+import Footer from '../components/layouts/Footer.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
+    path: '/personal-detail',
+    name: 'PersonalDetail',
+    components: {default: PersonalDetail, header: Header, footer:Footer},
+  },
+  {
     path: '/',
     name: 'Home',
-    component: Home
+    components: {default: Home, header: Header, footer:Footer},
   },
   {
     path: '/about',
